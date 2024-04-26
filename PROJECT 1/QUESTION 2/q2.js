@@ -1,12 +1,20 @@
-function findswap() {
-    let value1 = parseInt(document.getElementById("value1").value);
-    let value2 = parseInt(document.getElementById("value2").value);
+function variableSwap()
+{
+    let a = prompt("Enter the value of a:");
+    let b = prompt("Enter the value of b:");
 
-    let temp = value1;
-    value1 = value2;
-    value2 = temp;
+    console.log("Before swapping:");
+    console.log("a =", a);
+    console.log("b =", b);
 
-    document.getElementById("result").innerHTML += "after value 1- " + value1 + "<br>";
-    document.getElementById("result").innerHTML += "after value 2- " + value2;
+    let temp = a;
+    a = b;
+    b = temp;
+
+    console.log("After swapping:");
+    console.log("a =", a);
+    console.log("b =", b);
 
 }
+
+variableSwap();

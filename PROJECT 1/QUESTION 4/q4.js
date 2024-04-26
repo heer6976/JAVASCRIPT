@@ -1,27 +1,32 @@
-function calculateGrossSalary()
+function calculateGrossSalary(basicSalary, allowances, deductions) 
 {
-    const basicSalary = parseFloat(document.getElementById("basicSalary").value);
-    const houseRentAllowance = 0.05 * basicSalary;
-    const travelAllowance = 0.08 * basicSalary;
-    const medicalAllowance = 0.07 * basicSalary;
-
-     const totalAllowance = houseRentAllowance + travelAllowance + medicalAllowance;
-    
-     const taxDeduction = 200;
-     const grossSalary = basicSalary + totalAllowance - taxDeduction;
-     document.getElementById("grossSalaryResult").innerText = 'Gross Salary: ${grossSalary}';
-
-
-     
-      
-    
-
-
-
-
-
-
-
-
-
+    let grossSalary = basicSalary + allowances - deductions;
+    return grossSalary;
 }
+
+function getUserInput() 
+{
+    let basicSalary = parseFloat(prompt("Enter basic salary:"));
+    let allowances = parseFloat(prompt("Enter allowances:"));
+    let deductions = parseFloat(prompt("Enter deductions:"));
+    
+    return { basicSalary, allowances, deductions };
+}
+
+
+function main() 
+{
+    const { basicSalary, allowances, deductions } = getUserInput();
+
+    if (isNaN(basicSalary) || isNaN(allowances) || isNaN(deductions)) 
+    {
+        console.log("Invalid input. Please enter numeric values.");
+        return;
+    }
+
+    let grossSalary = calculateGrossSalary(basicSalary, allowances, deductions);
+
+    console.log("Gross Salary:", grossSalary);
+}
+
+main();

@@ -1,9 +1,6 @@
-function converted()
-{
-    let value1 = parseFloat(document.getElementId("value1").value)
-
-    let fahrenheit = (value1 * 9/5) + 32;
-
-    document.getElementById("result").innerHTML += "fahrenheit is:"  + fahrenheit.toFixed(2) + "<br>";
-    
+function celsiusToFahrenheit(celsius) {
+    return (celsius * 9/5) + 32;
 }
+let celsiusTemperature = 25;
+let fahrenheitTemperature = celsiusToFahrenheit(celsiusTemperature);
+console.log(celsiusTemperature + "°C is equal to " + fahrenheitTemperature.toFixed(2) + "°F");
